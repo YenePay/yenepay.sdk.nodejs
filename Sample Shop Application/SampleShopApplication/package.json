@@ -1,0 +1,21 @@
+{
+  "name": "sample_shop_application",
+  "version": "1.0.0",
+  "description": "A sample shop application built using yenepaysdk module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "YenePay Developers Team",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.1",
+    "yenepaysdk": "^1.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

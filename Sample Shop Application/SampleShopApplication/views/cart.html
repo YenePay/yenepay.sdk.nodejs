@@ -1,0 +1,136 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Shop Application</title>
+    <link href="/public/Css/bootstrap.css" rel="stylesheet">
+<link href="/public/Css/site.css" rel="stylesheet">    
+    <link href="/public/Css/FormStyle.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Buy with YenePay</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <p id="index-p">#Items:</p>
+                <img id="index-para" src="/public/Images/images.jpg" style="width:50px;height:50px">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Buy Single Item</a></li>
+                    <li><a href="/Home/Cart">Buy Multiple Items</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        
+
+<form id="myform" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <img src="/public/Images/images (5).jpg" style="height:175px"><br>
+                        </div>
+                        <div class="plan-div">
+                            <p class="plan-text">
+                                <b style="font-size:1.2em;" class="text-primary">Bag</b><input type="hidden" name="ItemName" value="Bag" style="color:lavenderblush"><br>
+                                <b>ETB 300.00</b><input type="hidden" name="UnitPrice" value="300"><br>
+                                <span>Quantity: </span><input type="text" name="Quantity" placeholder="1" value="1"><br>
+                                <input type="hidden" name="ItemId" value="1"><br>
+                                <button class="btn btn-success sub" type="button">Add to Cart</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <img src="/public/Images/white-ladies-watch-25778407.jpg" style="height:175px"><br>
+                        </div>
+                        <div class="plan-div">
+                            <p class="plan-text">
+                                <b style="font-size:1.2em;" class="text-primary">Watch</b><input type="hidden" name="ItemName" value="Watch"><br>
+                                <b>ETB 2000.00</b><input type="hidden" name="UnitPrice" value="2000"><br>
+                                <span>Quantity: </span><input type="text" name="Quantity" placeholder="1" value="1"><br>
+                                <input type="hidden" name="ItemId" value="2"><br>
+                                <button class="btn btn-success sub" type="button">Add to Cart</button>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <img src="/public/Images/images (1).jpg" style="height:175px"><br>
+                        </div>
+                        <div class="plan-div">
+                            <p class="plan-text">
+                                <b style="font-size:1.2em;" class="text-primary">Book</b><input type="hidden" name="ItemName" value="Book"><br>
+                                <b>ETB 150.00</b><input type="hidden" name="UnitPrice" value="150"><br>
+                                <span>Quantity: </span><input type="text" name="Quantity" placeholder="1" value="1"><br>
+                                <input type="hidden" name="ItemId" value="3"><br>
+                                <button class="btn btn-success sub" type="button">Add to Cart</button>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <img src="/public/Images/images (2).jpg" style="height:175px"><br>
+                        </div>
+                        <div class="plan-div">
+                            <p class="plan-text">
+                                <b style="font-size:1.2em;" class="text-primary">Shoe</b><input type="hidden" name="ItemName" value="Shoe"><br>
+                                <b>ETB 1800.00</b><input type="hidden" name="UnitPrice" value="1800"><br>
+                                <span>Quantity: </span><input type="text" name="Quantity" placeholder="1" value="1"><br>
+                                <input type="hidden" name="ItemId" value="4"><br>
+                                <button class="btn btn-success sub" type="button">Add to Cart</button>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 text-center">
+            <button class="btn btn-primary" type="button" id="checkout" style="width: 30%; min-width:250px; margin-top:50px">Go to Checkout</button>
+        </div>
+    </div>
+
+    
+</form>
+
+    </div>
+
+    <script type="text/javascript">
+        var cartUrl = '/Home/CheckoutCart';
+    </script>
+
+    <script src="/public/Scripts/jquery-3.1.1.js"></script>
+
+    <script src="/public/Scripts/bootstrap.js"></script>
+
+    <script src="/public/Scripts/Application.js"></script>
+
+ 
+
+</body></html>
