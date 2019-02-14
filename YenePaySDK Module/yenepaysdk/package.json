@@ -1,20 +1,20 @@
 {
-"name": "yenepaysdk",
-"version": "1.1.6",
-"main": "./index.js",
-"repository": {
+  "name": "yenepaysdk",
+  "version": "1.1.6",
+  "main": "./index.js",
+  "repository": {
     "type": "git",
     "url": "https://github.com/YenePay/YenePaySDK.git"
   },
-"keywords": [
-  "yenepay",
-  "payment",
-  "yenepaysdk",
-  "yenepay sdk"
-],
-"author": "Natan Tadesse <natan.tadesse@yenepay.com>",
-"devDependencies": {
+  "keywords": [
+    "yenepay",
+    "payment",
+    "yenepaysdk",
+    "yenepay sdk"
+  ],
+  "author": "Natan Tadesse <natan.tadesse@yenepay.com>",
+  "devDependencies": {
     "deep-extend": "^0.5.0",
     "request": "^2.81.0"
   }
-} 
+}
