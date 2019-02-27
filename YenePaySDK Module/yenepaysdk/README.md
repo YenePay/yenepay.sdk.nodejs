@@ -14,7 +14,11 @@ To add YenePay to your application and start collecting payments, you will first
 
 ## Installation
 
-Install the yenepaysdk module to your project using the npm command - npm install yenepaysdk - and require the module in your project.
+Install the yenepaysdk module to your project using npm.
+
+```npm install yenepaysdk```
+
+and require the module in your project.
 
 ```var ypco = require('yenepaysdk');```
 
@@ -39,7 +43,7 @@ ypco.checkoutType.Cart
 _2.
 
 ```javascript
-ypco.checkoutOptions = function(sellerCode, merchantOrderId = "", process = _checkoutType.Express, useSandbox = false, expiresInDays = null, successReturn = "", cancelReturn = "", ipnUrl = "", failureUrl = "")
+ypco.checkoutOptions = function(sellerCode, merchantOrderId = "", process = _checkoutType.Express, useSandbox = false, expiresAfter = null, successReturn = "", cancelReturn = "", ipnUrl = "", failureUrl = "")
 ```
 
 This function returns a new instance of checkoutOptions class
@@ -66,7 +70,7 @@ i.
 ypco.checkout.GetCheckoutUrlForExpress(checkoutOptions, checkoutItem)
 ```
 
-This function returns a checkout url for an Express type of checkout.The input parameters are a checkoutOptions object and checkoutItem object
+This function returns a checkout url for an Express type of checkout. The input parameters are a checkoutOptions object and checkoutItem object
 
 example of checkoutItem object
 
