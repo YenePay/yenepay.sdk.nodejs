@@ -15,7 +15,7 @@ function yenepaycheckout(querystring, extend, request)
   self.querystring = querystring;
   self.extend = extend;
   self.request = request;
-  self.checkoutBaseUrlProd = "https://checkout.yenepay.com/Home/Process/";
+  self.checkoutBaseUrlProd = "https://www.yenepay.com/checkout/Home/Process/";
   self.checkoutBaseUrlSandbox = "https://test.yenepay.com/Home/Process/";
   self.ipnVerifyUrlProd = "https://endpoints.yenepay.com/api/verify/ipn/";
   self.ipnVerifyUrlSandbox = "https://testapi.yenepay.com/api/verify/ipn/";
