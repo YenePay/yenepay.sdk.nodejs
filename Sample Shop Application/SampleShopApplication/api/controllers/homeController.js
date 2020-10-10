@@ -62,7 +62,7 @@ exports.PaymentSuccessReturnUrl = function(req, res) {
   var pdtRequestModel = new ypco.pdtRequestModel(pdtToken, params.TransactionId, params.MerchantOrderId, useSandbox);
   console.log('success url called');
   ypco.checkout.RequestPDT(pdtRequestModel).then((pdtJson) => {
-    if(pdtJson.Status = 'SUCCESS')
+    if(pdtJson.Status == 'SUCCESS')
     {
       console.log("success url called - Paid");
       //This means the payment is completed. 
