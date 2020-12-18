@@ -1,51 +1,68 @@
 'use strict';
 
-var _checkoutType = require('./checkoutType');
+const _checkoutType = require('./checkoutType');
 
-module.exports = function(sellerCode, merchantOrderId = "", process = _checkoutType.Express, useSandbox = false, expiresAfter = null, successReturn = "", cancelReturn = "", ipnUrl = "", failureUrl = "")
-    {
-        var self = this;
-        self.UseSandbox = useSandbox;
-        self.Process = process;
-        self.MerchantId = sellerCode;
-        self.SuccessUrl = successReturn;
-        self.CancelUrl = cancelReturn;
-        self.IPNUrl = ipnUrl;
-        self.FailureUrl = failureUrl;
-        self.ExpiresAfter = expiresAfter;
-        self.MerchantOrderId = merchantOrderId;  
-        self.TotalItemsDeliveryFee = null;
-        self.TotalItemsTax1 = null;
-        self.TotalItemsTax2 = null;
-        self.TotalItemsDiscount = null;
-        self.TotalItemsHandlingFee = null; 
+module.exports = class {
+  constructor(
+    sellerCode,
+    merchantOrderId = '',
+    process = _checkoutType.Express,
+    useSandbox = false,
+    expiresAfter = null,
+    successReturn = '',
+    cancelReturn = '',
+    ipnUrl = '',
+    failureUrl = ''
+  ) {
+    this.UseSandbox = useSandbox;
+    this.Process = process;
+    this.MerchantId = sellerCode;
+    this.SuccessUrl = successReturn;
+    this.CancelUrl = cancelReturn;
+    this.IPNUrl = ipnUrl;
+    this.FailureUrl = failureUrl;
+    this.ExpiresAfter = expiresAfter;
+    this.MerchantOrderId = merchantOrderId;
+    this.TotalItemsDeliveryFee = null;
+    this.TotalItemsTax1 = null;
+    this.TotalItemsTax2 = null;
+    this.TotalItemsDiscount = null;
+    this.TotalItemsHandlingFee = null;
+  }
 
-        self.SetOrderFees = function(totalItemsDeliveryFee, totalItemsDiscount, totalItemsHandlingFee, totalItemsTax1, totalItemsTax2){
-            self.TotalItemsDeliveryFee = totalItemsDeliveryFee;
-            self.TotalItemsDiscount = totalItemsDiscount;
-            self.TotalItemsHandlingFee = totalItemsHandlingFee;
-            self.TotalItemsTax1 = totalItemsTax1;
-            self.TotalItemsTax2 = totalItemsTax2;
-        }
+  SetOrderFees(
+    totalItemsDeliveryFee,
+    totalItemsDiscount,
+    totalItemsHandlingFee,
+    totalItemsTax1,
+    totalItemsTax2
+  ) {
+    this.TotalItemsDeliveryFee = totalItemsDeliveryFee;
+    this.TotalItemsDiscount = totalItemsDiscount;
+    this.TotalItemsHandlingFee = totalItemsHandlingFee;
+    this.TotalItemsTax1 = totalItemsTax1;
+    this.TotalItemsTax2 = totalItemsTax2;
+  }
 
-        self.GetAsKeyValue = function(forCart){
-            var dic = {
-                Process: self.Process,
-                MerchantId: self.MerchantId,
-                SuccessUrl: self.SuccessUrl,
-                CancelUrl: self.CancelUrl,
-                IPNUrl: self.IPNUrl,
-                FailureUrl: self.FailureUrl,
-                ExpiresAfter: self.ExpiresAfter,
-                MerchantOrderId: self.MerchantOrderId                
-            };
-			if(forCart){
-				dic.TotalItemsDeliveryFee = self.TotalItemsDeliveryFee;
-                dic.TotalItemsTax1 = self.TotalItemsTax1;
-                dic.TotalItemsTax2 = self.TotalItemsTax2;
-                dic.TotalItemsDiscount = self.TotalItemsDiscount;
-                dic.TotalItemsHandlingFee = self.TotalItemsHandlingFee;				
-			}
-            return dic;
-        }     
+  GetAsKeyValue(forCart) {
+    const dic = {
+      Process: this.Process,
+      MerchantId: this.MerchantId,
+      SuccessUrl: this.SuccessUrl,
+      CancelUrl: this.CancelUrl,
+      IPNUrl: this.IPNUrl,
+      FailureUrl: this.FailureUrl,
+      ExpiresAfter: this.ExpiresAfter,
+      MerchantOrderId: this.MerchantOrderId,
     };
+    
+    if (forCart) {
+      dic.TotalItemsDeliveryFee = this.TotalItemsDeliveryFee;
+      dic.TotalItemsTax1 = this.TotalItemsTax1;
+      dic.TotalItemsTax2 = this.TotalItemsTax2;
+      dic.TotalItemsDiscount = this.TotalItemsDiscount;
+      dic.TotalItemsHandlingFee = this.TotalItemsHandlingFee;
+    }
+    return dic;
+  }
+};
