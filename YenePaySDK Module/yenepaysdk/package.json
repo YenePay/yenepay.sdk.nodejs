@@ -1,10 +1,10 @@
 {
   "name": "yenepaysdk",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YenePay/YenePaySDK.git"
+    "url": "https://github.com/YenePay/yenepay.sdk.nodejs.git"
   },
   "keywords": [
     "yenepay",
