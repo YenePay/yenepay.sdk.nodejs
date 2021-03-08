@@ -1,32 +1,40 @@
 'use strict';
 
-module.exports = function(itemId, itemName, price, quantity = 1, tax1 = null, tax2 = null, discount = null, handlingFee = null, deliveryFee = null)
-    {
-        var self = this;
-        self.ItemId = itemId? itemId : '';
-        self.ItemName = itemName;
-        self.UnitPrice = price;
-        self.Quantity = quantity;
-        self.Discount = discount;
-        self.HandlingFee = handlingFee;        
-        self.DeliveryFee = deliveryFee;
-        self.Tax1 = tax1;
-        self.Tax2 = tax2;
+module.exports = class {
+  constructor(
+    itemId,
+    itemName,
+    price,
+    quantity = 1,
+    tax1 = null,
+    tax2 = null,
+    discount = null,
+    handlingFee = null,
+    deliveryFee = null
+  ) {
+    this.ItemId = itemId ? itemId : '';
+    this.ItemName = itemName;
+    this.UnitPrice = price;
+    this.Quantity = quantity;
+    this.Discount = discount;
+    this.HandlingFee = handlingFee;
+    this.DeliveryFee = deliveryFee;
+    this.Tax1 = tax1;
+    this.Tax2 = tax2;
+  }
 
-        self.GetAsKeyValue = function(dict)
-        {
-            if (!dict)
-                dict = {};
+  GetAsKeyValue(dict) {
+    if (!dict) dict = {};
 
-            dict["ItemId"] = self.ItemId;
-            dict["ItemName"] = self.ItemName;
-            dict["UnitPrice"] = self.UnitPrice;
-            dict["Quantity"] = self.Quantity;
-            dict["Discount"] = self.Discount;
-            dict["HandlingFee"] = self.HandlingFee;
-            dict["DeliveryFee"] = self.DeliveryFee;
-            dict["Tax1"] = self.Tax1;
-            dict["Tax2"] = self.Tax2;
-            return dict;
-        }
-    }
+    dict['ItemId'] = this.ItemId;
+    dict['ItemName'] = this.ItemName;
+    dict['UnitPrice'] = this.UnitPrice;
+    dict['Quantity'] = this.Quantity;
+    dict['Discount'] = this.Discount;
+    dict['HandlingFee'] = this.HandlingFee;
+    dict['DeliveryFee'] = this.DeliveryFee;
+    dict['Tax1'] = this.Tax1;
+    dict['Tax2'] = this.Tax2;
+    return dict;
+  }
+};
