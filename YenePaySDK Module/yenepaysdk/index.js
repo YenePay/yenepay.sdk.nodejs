@@ -133,8 +133,8 @@ function yenepaycheckout(querystring, extend, request)
 }
 
 module.exports.checkout = new yenepaycheckout(querystring, extend, request);
-module.exports.checkoutOptions = function(sellerCode, merchantOrderId = "", process = _checkoutType.Express, useSandbox = false, expiresAfter = null, successReturn = "", cancelReturn = "", ipnUrl = "", failureUrl = ""){
-    return new _checkoutOptions(sellerCode, merchantOrderId, process, useSandbox, expiresAfter, successReturn, cancelReturn, ipnUrl, failureUrl);
+module.exports.checkoutOptions = function(sellerCode, merchantOrderId = "", process = _checkoutType.Express, useSandbox = false, expiresAfter = null, successReturn = "", cancelReturn = "", ipnUrl = "", failureUrl = "", currency = ""){
+    return new _checkoutOptions(sellerCode, merchantOrderId, process, useSandbox, expiresAfter, successReturn, cancelReturn, ipnUrl, failureUrl, currency);
 };
 module.exports.checkoutType = _checkoutType;
 module.exports.pdtRequestModel = function(pdtToken, transactionId, merchantOrderId, useSandbox = false){

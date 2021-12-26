@@ -9,13 +9,14 @@ var sellerCode = "YOUR_YENEPAY_SELLER_CODE",
     cancelUrlReturn = "", //"YOUR_CANCEL_URL",
     failureUrlReturn = "", //"YOUR_FAILURE_URL",
     pdtToken = "YOUR_PDT_KEY_HERE",
-    useSandbox = true;
+    useSandbox = true,
+    currency = "USD";
     
 
 exports.CheckoutExpress = function(req, res) {
   var merchantOrderId = '12-34'; //"YOUR_UNIQUE_ID_FOR_THIS_ORDER";  //can also be set null
   var expiresAfter = 2880; //"NUMBER_OF_MINUTES_BEFORE_THE_ORDER_EXPIRES"; //setting null means it never expires
-  var checkoutOptions = ypco.checkoutOptions(sellerCode, merchantOrderId, ypco.checkoutType.Express, useSandbox, expiresAfter, successUrlReturn, cancelUrlReturn, ipnUrlReturn, failureUrlReturn);
+  var checkoutOptions = ypco.checkoutOptions(sellerCode, merchantOrderId, ypco.checkoutType.Express, useSandbox, expiresAfter, successUrlReturn, cancelUrlReturn, ipnUrlReturn, failureUrlReturn, currency);
   var checkoutItem = req.body;
   var url = ypco.checkout.GetCheckoutUrlForExpress(checkoutOptions, checkoutItem);
   res.redirect(url);
